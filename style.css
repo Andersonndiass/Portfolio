@@ -340,7 +340,30 @@ footer p span {
     -webkit-overflow-scrolling: auto; 
     scrollbar-width: auto; 
 }
+.image-carousel-dash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 25px;
+    margin: 40px auto 0;
+    max-width: 900px; 
+}
 
+.image-carousel-dash img {
+    width: 100%;
+    max-width: 800px; 
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 6px 18px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-carousel-dash img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+}
 .image-carousel::-webkit-scrollbar {
     display: auto;
 }
