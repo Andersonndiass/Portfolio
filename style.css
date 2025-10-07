@@ -352,7 +352,7 @@ footer p span {
 
 .image-carousel-dash img {
     width: 100%;
-    max-width: 800px; 
+    max-width: 600px; 
     height: auto;
     border-radius: 12px;
     object-fit: cover;
