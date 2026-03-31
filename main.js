@@ -60,3 +60,83 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
 
 sections.forEach(s => observer.observe(s));
+/* TILT */
+VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+  max: 12,
+  speed: 400,
+  glare: true,
+  "max-glare": 0.2
+});
+
+/* HACKER EFFECT */
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const hacker = document.getElementById("hacker");
+
+if(hacker){
+  hacker.addEventListener("mouseover", () => {
+    let iteration = 0;
+    const original = hacker.innerText;
+
+    const interval = setInterval(() => {
+      hacker.innerText = original
+        .split("")
+        .map((letter, index) => {
+          if(index < iteration){
+            return original[index];
+          }
+          return letters[Math.floor(Math.random() * 26)];
+        })
+        .join("");
+
+      if(iteration >= original.length){
+        clearInterval(interval);
+      }
+
+      iteration += 1/3;
+    }, 30);
+  });
+}
+
+/* TERMINAL */
+const input = document.getElementById("terminal-input");
+const output = document.getElementById("terminal-output");
+
+if(input){
+  function log(text){
+    const line = document.createElement("div");
+    line.textContent = text;
+    output.appendChild(line);
+    output.scrollTop = output.scrollHeight;
+  }
+
+  input.addEventListener("keydown", function(e){
+    if(e.key === "Enter"){
+      const cmd = input.value.trim();
+      runCommand(cmd);
+      input.value = "";
+    }
+  });
+
+  function runCommand(cmd){
+    log("> " + cmd);
+
+    switch(cmd){
+
+      case "help":
+        log("commands: help, skills, sudo hack");
+        break;
+
+      case "skills":
+        log("Python, SQL, Power BI, JavaScript");
+        break;
+
+      case "sudo hack":
+        document.documentElement.classList.toggle("hacked");
+        log("⚡ hacker mode activated");
+        break;
+
+      default:
+        log("command not found");
+    }
+  }
+}

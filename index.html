@@ -10,8 +10,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
+  
 </head>
-<body>x'
+<body>
+  <div id="screen-flash"></div>
+  <div class="mouse-glow"></div>
   <!-- HEADER -->
   <header>
     <div class="header-inner">
@@ -23,7 +26,7 @@
           <li><a href="#habilidades">Habilidades</a></li>
           <li><a href="#projetos">Projetos</a></li>
           <li><a href="#academico">Acadêmico</a></li>
-          <li><a href="Curriculo_Francisco_.pdf" download class="nav-cv">↓ Currículo</a></li>
+          <li><a href="./assets/Curriculo Francisco .pdf" download class="nav-cv">↓ Currículo</a></li>
         </ul>
       </nav>
     </div>
@@ -38,7 +41,7 @@
         <div class="hero-tag fade-in fade-in-1"><span></span> Disponível para estágio</div>
         <h1 class="hero-name fade-in fade-in-2">
           Francisco<br>
-          <span class="line2">Anderson</span>
+          <span id="hacker" class="line2">Anderson</span>
         </h1>
         <p class="hero-role fade-in fade-in-3">
           Analista de Dados · <span class="highlight">Dev & Data</span>
@@ -53,8 +56,8 @@
       </div>
 
       <div class="hero-photo-wrap">
-        <div class="hero-photo-frame">
-          <div class="photo-placeholder"><img src="assets/foto.jpg" alt="Francisco Anderson"></div>
+        <div class="hero-photo-frame" data-tilt>
+          <div class="photo-placeholder"><img src="assets/eu.png" alt="Francisco Anderson"></div>
         </div>
         <div class="hero-socials">
           <a href="https://github.com/Andersonndiass" target="_blank" class="social-link">GH</a>
@@ -88,17 +91,17 @@
               <span class="stat-num">2+</span>
               <span class="stat-label">Anos de dev</span>
             </div>-->
-            <div class="stat-card">
-              <span class="stat-num">5+</span>
-              <span class="stat-label">Projetos</span>
+            <div class="stat-card glow-effect" data-tilt>
+              <span class="stat-num" data-target="5">0</span>
+              <span class="stat-label">PROJETOS</span>
             </div>
-            <div class="stat-card">
-              <span class="stat-num">2×</span>
-              <span class="stat-label">Premiações</span>
+            <div class="stat-card glow-effect" data-tilt>
+              <span class="stat-num" data-target="2">0</span>
+              <span class="stat-label">PREMIAÇÕES</span>
             </div>
-            <div class="stat-card">
-              <span class="stat-num">170h+</span>
-              <span class="stat-label">Certificações</span>
+            <div class="stat-card glow-effect" data-tilt>
+              <span class="stat-num" data-target="170">0</span>
+              <span class="stat-label">CERTIFICAÇÕES</span>
             </div>
           </div>
         </div>
@@ -142,16 +145,16 @@
       </div>
 
       <div class="skills-panel active" id="panel-hard">
-        <div class="skill-chip"><i class="devicon-python-plain skill-icon"></i>Python</div>
-        <div class="skill-chip"><i class="devicon-postgresql-plain skill-icon"></i>SQL</div>
-        <div class="skill-chip"><i class="devicon-minitab-plain skill-icon"></i>Power BI</div>
-        <div class="skill-chip"><i class="devicon-pytest-plain skill-icon"></i>Excel</div>
-        <div class="skill-chip"><i class="devicon-javascript-plain skill-icon"></i>JavaScript</div>
-        <div class="skill-chip"><i class="devicon-typescript-plain skill-icon"></i>TypeScript</div>
-        <div class="skill-chip"><i class="devicon-html5-plain skill-icon"></i>HTML</div>
-        <div class="skill-chip"><i class="devicon-css3-plain skill-icon"></i>CSS</div>
-        <div class="skill-chip"><i class="devicon-git-plain skill-icon"></i>Git</div>
-        <div class="skill-chip"><i class="devicon-github-original skill-icon"></i>GitHub</div>
+        <div class="skill-chip" ><i class="devicon-python-plain skill-icon"></i>Python</div>
+        <div class="skill-chip" ><i class="devicon-postgresql-plain skill-icon"></i>SQL</div>
+        <div class="skill-chip" ><i class="devicon-minitab-plain skill-icon"></i>Power BI</div>
+        <div class="skill-chip" ><i class="devicon-pytest-plain skill-icon"></i>Excel</div>
+        <div class="skill-chip" ><i class="devicon-javascript-plain skill-icon"></i>JavaScript</div>
+        <div class="skill-chip" ><i class="devicon-typescript-plain skill-icon"></i>TypeScript</div>
+        <div class="skill-chip" ><i class="devicon-html5-plain skill-icon"></i>HTML</div>
+        <div class="skill-chip" ><i class="devicon-css3-plain skill-icon"></i>CSS</div>
+        <div class="skill-chip" ><i class="devicon-git-plain skill-icon"></i>Git</div>
+        <div class="skill-chip" ><i class="devicon-github-original skill-icon"></i>GitHub</div>
       </div>
 
       <div class="skills-panel" id="panel-soft">
@@ -408,8 +411,238 @@
         <a href="Curriculo_Francisco_.pdf" download>Currículo</a>
       </div>
     </div>
-  </footer>
+    <!-- TERMINAL -->
+  <section id="terminal-section">
+    <div class="section-inner">
+      <p class="section-label" style="text-align: center;">// terminal</p>
 
+      <div class="terminal">
+        <div class="terminal-header">
+          <div class="terminal-btn red"></div>
+          <div class="terminal-btn yellow"></div>
+          <div class="terminal-btn green"></div>
+        </div>
+
+        <div class="terminal-body" id="term-body">
+          <div class="terminal-output">
+            Bem-vindo ao terminal fa.dev v1.0.0 <br>
+            Digite <span style="color:var(--accent);">help</span> para ver os comandos disponíveis.
+          </div>
+
+          <div class="terminal-input-line">
+            <span class="prompt">visitor@fa.dev:~$</span>
+            <input type="text" id="term-input" class="terminal-input" autocomplete="off">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </footer>
+  <script>
+const termInput = document.getElementById('term-input');
+const termBody = document.getElementById('term-body');
+
+termInput.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    const val = this.value.trim().toLowerCase();
+    if(val !== '') executeCommand(val);
+    this.value = '';
+  }
+});
+
+function executeCommand(cmd) {
+  let response = '';
+
+  switch(cmd) {
+    case 'help':
+      response = `Comandos: <br> 
+      - <span style="color:var(--accent)">about</span>: sobre mim<br> 
+      - <span style="color:var(--accent)">skills</span>: tecnologias que uso<br> 
+      - <span style="color:var(--accent)">sudo hack</span>: comando restrito<br>
+      - <span style="color:var(--accent)">contact</span>: entrar em contato<br>
+      - <span style="color:var(--accent)">clear</span>: limpa o terminal<br> 
+      - <span style="color:var(--accent)">reboot</span>: → reiniciar sistema<br> 
+      - <span style="color:var(--accent)">reset</span>: comando restrito`;
+      break;
+
+    case 'about':
+      response = 'Dev & Data Analyst. Apaixonado por transformar dados em decisões.';
+      break;
+
+    case 'skills':
+      response = '[Python, SQL, Power BI, JS, React, Godot]';
+      break;
+    case 'contact':
+      response = 'Abrindo email...';
+      window.location.href = 'mailto:andersondiasss018@gmail.com';
+      break;
+    case 'sudo hire-me':
+      response = '<span style="color:var(--accent)">Acesso concedido 🤝</span>';
+      break;
+    case 'clear':
+      document.querySelectorAll('.terminal-output-log').forEach(e => e.remove());
+      return;
+    case 'sudo hack':
+      response = '<span style="color:#ff5f56;">Acesso negado. Essa tentativa foi registrada.</span>';
+      document.documentElement.style.setProperty('--accent', '#ff5f56');
+      break;
+    case 'reset':
+      response = 'Sistema restaurado com sucesso.';
+      document.documentElement.style.setProperty('--accent', '#00e5a0');
+      document.documentElement.style.setProperty('--accent2', '#00bfff');
+      break;
+    case 'reboot':
+  const flash = document.getElementById('screen-flash');
+
+  flash.style.opacity = '1';
+
+  setTimeout(() => {
+    flash.style.opacity = '0';
+
+    document.querySelectorAll('.terminal-output-log').forEach(e => e.remove());
+
+    const logLine = document.createElement('div');
+    logLine.className = 'terminal-output terminal-output-log';
+    logLine.innerHTML = `<span style="color:var(--accent)">Sistema reiniciado com sucesso.</span>`;
+
+    termBody.insertBefore(logLine, document.querySelector('.terminal-input-line'));
+  }, 300);
+
+  return;
+    default:
+      response = `Comando não reconhecido: ${cmd}. Digite 'help'.`;
+  }
+
+  const logLine = document.createElement('div');
+  logLine.className = 'terminal-output terminal-output-log';
+  logLine.innerHTML = `
+    <span class="prompt">visitor@fa.dev:~$</span> ${cmd}<br>
+    <span style="color:var(--text);">${response}</span>
+  `;
+
+  termBody.insertBefore(logLine, document.querySelector('.terminal-input-line'));
+  termBody.scrollTop = termBody.scrollHeight;
+}
+</script>
+  <script>
+  const counters = document.querySelectorAll('.stat-num');
+
+  const startCounter = (entry) => {
+    const el = entry.target;
+    const target = +el.dataset.target;
+    let count = 0;
+
+    const update = () => {
+      const increment = target / 60;
+
+      count += increment;
+
+      if(count < target){
+        el.innerText = Math.floor(count) + (target >= 100 ? 'h+' : '+');
+        requestAnimationFrame(update);
+      }else{
+        el.innerText = target + (target >= 100 ? 'h+' : '+');
+      }
+    }
+
+    update();
+  }
+
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        startCounter(entry);
+        observer.unobserve(entry.target);
+      }
+    })
+  },{threshold:0.6});
+
+  counters.forEach(counter=>{
+    observer.observe(counter);
+  });
+  </script>
+  <script>
+const glow = document.querySelector(".mouse-glow");
+
+document.addEventListener("mousemove",(e)=>{
+
+  glow.style.left = e.clientX + "px";
+  glow.style.top = e.clientY + "px";
+
+});
+</script>
+<script>
+const cards = document.querySelectorAll(".skill-chip");
+
+cards.forEach(card => {
+  let x = 0;
+  let y = 0;
+  let targetX = 0;
+  let targetY = 0;
+
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    // intensidade do efeito
+    targetX = (mouseX - centerX) * 0.15;
+    targetY = (mouseY - centerY) * 0.15;
+  });
+
+  card.addEventListener("mouseleave", () => {
+    targetX = 0;
+    targetY = 0;
+  });
+
+  function animate() {
+    x += (targetX - x) * 0.9;
+    y += (targetY - y) * 0.9;
+
+    card.style.transform = `translate(${x}px, ${y}px)`;
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+});
+</script>
+<script>
+const tabButtons = document.querySelectorAll(".tab-btn");
+const panels = document.querySelectorAll(".skills-panel");
+
+tabButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    const tab = btn.dataset.tab;
+
+    // remove ativo dos botões
+    tabButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    // esconde todos os painéis
+    panels.forEach(panel => panel.classList.remove("active"));
+
+    // mostra o painel correto
+    document.getElementById("panel-" + tab).classList.add("active");
+
+  });
+});1
+</script>
+<script>
+VanillaTilt.init(document.querySelectorAll(".stat-card"), {
+  max: 15,
+  speed: 400,
+  glare: true,
+  "max-glare": 0.2,
+  scale: 1.05
+});
+</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
