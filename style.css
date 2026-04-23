@@ -900,6 +900,7 @@ section { padding: 100px 2rem; }
 }
 
 .project-meta {
+  margin-top: 10px;
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
@@ -1494,4 +1495,24 @@ footer {
   font-size: 0.85rem;
   width: 100%;
   outline: none;
+}
+/* ── Project embed (Power BI / iframe) ─────────────── */
+.project-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  margin: 1.25rem 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.project-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: none;
 }
