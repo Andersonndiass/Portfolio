@@ -1516,3 +1516,81 @@ footer {
   display: block;
   border: none;
 }
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  padding: 0.85rem 1.4rem;
+  border-radius: 10px;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+
+  color: #25D366;
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  background: transparent;
+
+  position: relative;
+  overflow: hidden;
+
+  transition: all 0.3s ease;
+}
+
+/* Ícone */
+.btn-whatsapp i {
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+/* Texto separado (IMPORTANTE) */
+.btn-whatsapp span {
+  transition: all 0.3s ease;
+}
+
+/* Efeito verde deslizando */
+.btn-whatsapp::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: #25D366;
+  transform: translateX(-100%);
+  transition: transform 0.35s ease;
+  z-index: 0;
+}
+
+/* Ativa o fundo */
+.btn-whatsapp:hover::before {
+  transform: translateX(0);
+}
+
+/* Garante que conteúdo fique acima */
+.btn-whatsapp i,
+.btn-whatsapp span {
+  position: relative;
+  z-index: 1;
+}
+
+/* 🔥 AQUI ESTÁ O SEGREDO */
+.btn-whatsapp:hover {
+  color: #000; /* fallback */
+}
+
+/* Ícone e TEXTO ficam pretos */
+.btn-whatsapp:hover i,
+.btn-whatsapp:hover span {
+  color: #000;
+}
+
+/* Glow */
+.btn-whatsapp:hover {
+  border-color: #25D366;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+}
+
+/* micro animação */
+.btn-whatsapp:hover i {
+  transform: scale(1.15) rotate(5deg);
+}
